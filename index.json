@@ -1,0 +1,603 @@
+{
+  "jobs": [
+    {
+      "title": "Software Engineer",
+      "description": "Analyze and interpret complex data to help organizations make decisions.",
+      "applicants": 5,
+      "id": "1"
+    },
+    {
+      "title": "Data Engineer",
+      "description": "Analyze and interpret complex data to help organizations make decisions.",
+      "applicants": 5,
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "title": "Product Manager",
+      "description": "Manage product development and ensure the product meets business needs.",
+      "applicants": 3
+    },
+    {
+      "id": "4",
+      "title": "UX/UI Designer",
+      "description": "Design user interfaces and user experiences for web and mobile applications.",
+      "applicants": 15
+    },
+    {
+      "id": "5",
+      "title": "Marketing Manager",
+      "description": "Lead the marketing efforts, developing strategies to increase brand awareness and sales.",
+      "applicants": 8
+    },
+    {
+      "id": "6",
+      "title": "DevOps Engineer",
+      "description": "Oversee code deployment processes and maintain the infrastructure for software applications.",
+      "applicants": 12
+    },
+    {
+      "id": "7",
+      "title": "Business Analyst",
+      "description": "Evaluate business processes and systems, providing recommendations for improvements.",
+      "applicants": 7
+    },
+    {
+      "id": "8",
+      "title": "Project Manager",
+      "description": "Manage cross-functional teams to ensure projects are delivered on time and within scope.",
+      "applicants": 6
+    },
+    {
+      "id": "9",
+      "title": "QA Engineer",
+      "description": "Test and evaluate software applications to ensure they meet required quality standards.",
+      "applicants": 14
+    },
+    {
+      "id": "10",
+      "title": "Sales Executive",
+      "description": "Generate leads, build relationships, and close sales to drive company revenue.",
+      "applicants": 20
+    },
+    {
+      "id": "25ab",
+      "title": "IT Helpdesk",
+      "description": "Help people",
+      "applicants": "2"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "jobId": 1,
+      "email": "john.doe@example.com",
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-01",
+      "phone": "123-456-7890",
+      "skills": [
+        "JavaScript",
+        "React",
+        "Node.js"
+      ],
+      "experience": "3 years"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "jobId": 1,
+      "email": "jane.smith@example.com",
+      "resumeLink": "#",
+      "status": "Interview Scheduled",
+      "date": "2024-11-03",
+      "phone": "987-654-3210",
+      "skills": [
+        "Python",
+        "Django",
+        "SQL"
+      ],
+      "experience": "5 years"
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "jobId": 1,
+      "email": "alice.johnson@example.com",
+      "resumeLink": "#",
+      "status": "Hired",
+      "date": "2024-10-28",
+      "phone": "555-123-4567",
+      "skills": [
+        "Java",
+        "Spring",
+        "MySQL"
+      ],
+      "experience": "7 years"
+    },
+    {
+      "id": "4",
+      "name": "Bob Brown",
+      "jobId": 1,
+      "email": "bob.brown@example.com",
+      "resumeLink": "#",
+      "status": "Rejected",
+      "date": "2024-11-05",
+      "phone": "444-567-8901",
+      "skills": [
+        "C#",
+        ".NET",
+        "Azure"
+      ],
+      "experience": "4 years"
+    },
+    {
+      "id": "5",
+      "name": "Sarah Lee",
+      "jobId": 1,
+      "email": "sarah.lee@example.com",
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-06",
+      "phone": "333-678-1234",
+      "skills": [
+        "Ruby",
+        "Rails",
+        "PostgreSQL"
+      ],
+      "experience": "2 years"
+    },
+    {
+      "id": "6",
+      "name": "Chris Evans",
+      "jobId": 2,
+      "email": "chris.evans@example.com",
+      "resumeLink": "#",
+      "status": "Interview Scheduled",
+      "date": "2024-10-29",
+      "phone": "777-456-8901",
+      "skills": [
+        "React",
+        "Redux",
+        "TypeScript"
+      ],
+      "experience": "6 years"
+    },
+    {
+      "id": "7",
+      "name": "Emily Clark",
+      "jobId": 2,
+      "email": "emily.clark@example.com",
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-02",
+      "phone": "888-234-5678",
+      "skills": [
+        "JavaScript",
+        "Vue",
+        "GraphQL"
+      ],
+      "experience": "4 years"
+    },
+    {
+      "id": "8",
+      "name": "Michael Scott",
+      "jobId": 2,
+      "email": "michael.scott@example.com",
+      "resumeLink": "#",
+      "status": "Hired",
+      "date": "2024-11-01",
+      "phone": "666-345-7890",
+      "skills": [
+        "PHP",
+        "Laravel",
+        "MySQL"
+      ],
+      "experience": "8 years"
+    },
+    {
+      "id": "9",
+      "name": "Angela Martin",
+      "jobId": 2,
+      "email": "angela.martin@example.com",
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-05",
+      "phone": "555-987-6543",
+      "skills": [
+        "Swift",
+        "iOS",
+        "Xcode"
+      ],
+      "experience": "3 years"
+    },
+    {
+      "id": "10",
+      "name": "Oscar Martinez",
+      "jobId": 2,
+      "email": "oscar.martinez@example.com",
+      "resumeLink": "#",
+      "status": "Rejected",
+      "date": "2024-10-30",
+      "phone": "999-000-1111",
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "Hibernate"
+      ],
+      "experience": "5 years"
+    },
+    {
+      "id": "11",
+      "name": "Pam Beesly",
+      "jobId": 3,
+      "email": "pam.beesly@example.com",
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-04",
+      "phone": "777-234-5678",
+      "skills": [
+        "Design",
+        "Photoshop",
+        "Illustrator"
+      ],
+      "experience": "2 years"
+    },
+    {
+      "id": "12",
+      "name": "Jim Halpert",
+      "jobId": 3,
+      "email": "jim.halpert@example.com",
+      "resumeLink": "#",
+      "status": "Interview Scheduled",
+      "date": "2024-10-30",
+      "phone": "555-456-7890",
+      "skills": [
+        "Sales",
+        "Marketing",
+        "CRM"
+      ],
+      "experience": "4 years"
+    },
+    {
+      "id": "13",
+      "name": "Dwight Schrute",
+      "jobId": 3,
+      "email": "dwight.schrute@example.com",
+      "resumeLink": "#",
+      "status": "Hired",
+      "date": "2024-11-06",
+      "phone": "444-123-4567",
+      "skills": [
+        "Sales",
+        "Negotiation",
+        "Management"
+      ],
+      "experience": "6 years"
+    },
+    {
+      "id": "14",
+      "name": "Stanley Hudson",
+      "jobId": 3,
+      "email": "stanley.hudson@example.com",
+      "resumeLink": "#",
+      "status": "Rejected",
+      "date": "2024-11-03",
+      "phone": "333-678-2345",
+      "skills": [
+        "Accounting",
+        "Excel",
+        "Budgeting"
+      ],
+      "experience": "10 years"
+    },
+    {
+      "id": "15",
+      "name": "Phyllis Vance",
+      "jobId": 3,
+      "email": "phyllis.vance@example.com",
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-05",
+      "phone": "666-789-0123",
+      "skills": [
+        "HR",
+        "Recruiting",
+        "Communication"
+      ],
+      "experience": "8 years"
+    },
+    {
+      "id": "16",
+      "name": "Holly Flax",
+      "jobId": 4,
+      "email": "holly.flax@example.com",
+      "resumeLink": "#",
+      "status": "Interview Scheduled",
+      "date": "2024-10-29",
+      "phone": "555-987-1234",
+      "skills": [
+        "HR",
+        "Recruiting",
+        "Onboarding"
+      ],
+      "experience": "5 years"
+    },
+    {
+      "id": "17",
+      "name": "Roy Anderson",
+      "jobId": 4,
+      "email": "roy.anderson@example.com",
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-10-31",
+      "phone": "777-654-3210",
+      "skills": [
+        "Java",
+        "Spring",
+        "SQL"
+      ],
+      "experience": "6 years"
+    },
+    {
+      "id": "18",
+      "name": "Erin Hannon",
+      "jobId": 4,
+      "email": "erin.hannon@example.com",
+      "resumeLink": "#",
+      "status": "Hired",
+      "date": "2024-11-02",
+      "phone": "555-432-9876",
+      "skills": [
+        "Customer Service",
+        "CRM",
+        "Communication"
+      ],
+      "experience": "4 years"
+    },
+    {
+      "id": "19",
+      "name": "Karen Filippelli",
+      "jobId": 4,
+      "email": "karen.filippelli@example.com",
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-03",
+      "phone": "444-678-2345",
+      "skills": [
+        "Marketing",
+        "Sales",
+        "Leadership"
+      ],
+      "experience": "3 years"
+    },
+    {
+      "id": "20",
+      "name": "Meredith Palmer",
+      "jobId": 4,
+      "email": "meredith.palmer@example.com",
+      "resumeLink": "#",
+      "status": "Rejected",
+      "date": "2024-10-30",
+      "phone": "333-789-5678",
+      "skills": [
+        "Sales",
+        "CRM",
+        "Negotiation"
+      ],
+      "experience": "12 years"
+    }
+  ],
+  "questions": [
+    {
+      "id": "9d6a",
+      "jobId": "5",
+      "question": "Who is modi",
+      "answerChoices": [
+        "PM",
+        "President",
+        "Hero",
+        "Villain"
+      ],
+      "correctAnswer": "PM"
+    },
+    {
+      "question": "What is data ",
+      "answers": [
+        "the data ",
+        "a data ",
+        "he data ",
+        "she data"
+      ],
+      "correctAnswer": "he data ",
+      "id": "ede6"
+    },
+    {
+      "id": "8094",
+      "jobId": "1",
+      "question": "what is software",
+      "answers": [
+        "the software",
+        "a software",
+        "he software",
+        "she software"
+      ],
+      "correctAnswer": "a software"
+    },
+    {
+      "id": "bbab",
+      "jobId": "3",
+      "question": "what is product",
+      "answers": [
+        "a product",
+        "the product",
+        "he product",
+        "she product"
+      ],
+      "correctAnswer": "he product"
+    }
+  ],
+  "applicants": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "jobId": 1,
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-01"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "jobId": 1,
+      "resumeLink": "#",
+      "status": "Interview Scheduled",
+      "date": "2024-11-03"
+    },
+    {
+      "id": "3",
+      "name": "Alice Johnson",
+      "jobId": 1,
+      "resumeLink": "#",
+      "status": "Hired",
+      "date": "2024-10-28"
+    },
+    {
+      "id": "4",
+      "name": "Bob Brown",
+      "jobId": 1,
+      "resumeLink": "#",
+      "status": "Rejected",
+      "date": "2024-11-05"
+    },
+    {
+      "id": "5",
+      "name": "Sarah Lee",
+      "jobId": 1,
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-06"
+    },
+    {
+      "id": "6",
+      "name": "Chris Evans",
+      "jobId": 2,
+      "resumeLink": "#",
+      "status": "Interview Scheduled",
+      "date": "2024-10-29"
+    },
+    {
+      "id": "7",
+      "name": "Emily Clark",
+      "jobId": 2,
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-02"
+    },
+    {
+      "id": "8",
+      "name": "Michael Scott",
+      "jobId": 2,
+      "resumeLink": "#",
+      "status": "Hired",
+      "date": "2024-11-01"
+    },
+    {
+      "id": "9",
+      "name": "Angela Martin",
+      "jobId": 2,
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-05"
+    },
+    {
+      "id": "10",
+      "name": "Oscar Martinez",
+      "jobId": 2,
+      "resumeLink": "#",
+      "status": "Rejected",
+      "date": "2024-10-30"
+    },
+    {
+      "id": "11",
+      "name": "Pam Beesly",
+      "jobId": 3,
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-04"
+    },
+    {
+      "id": "12",
+      "name": "Jim Halpert",
+      "jobId": 3,
+      "resumeLink": "#",
+      "status": "Interview Scheduled",
+      "date": "2024-10-30"
+    },
+    {
+      "id": "13",
+      "name": "Dwight Schrute",
+      "jobId": 3,
+      "resumeLink": "#",
+      "status": "Hired",
+      "date": "2024-11-06"
+    },
+    {
+      "id": "14",
+      "name": "Stanley Hudson",
+      "jobId": 3,
+      "resumeLink": "#",
+      "status": "Rejected",
+      "date": "2024-11-03"
+    },
+    {
+      "id": "15",
+      "name": "Phyllis Vance",
+      "jobId": 3,
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-05"
+    },
+    {
+      "id": "16",
+      "name": "Holly Flax",
+      "jobId": 4,
+      "resumeLink": "#",
+      "status": "Interview Scheduled",
+      "date": "2024-10-29"
+    },
+    {
+      "id": "17",
+      "name": "Roy Anderson",
+      "jobId": 4,
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-10-31"
+    },
+    {
+      "id": "18",
+      "name": "Erin Hannon",
+      "jobId": 4,
+      "resumeLink": "#",
+      "status": "Hired",
+      "date": "2024-11-02"
+    },
+    {
+      "id": "19",
+      "name": "Karen Filippelli",
+      "jobId": 4,
+      "resumeLink": "#",
+      "status": "Under Review",
+      "date": "2024-11-03"
+    },
+    {
+      "id": "20",
+      "name": "Meredith Palmer",
+      "jobId": 4,
+      "resumeLink": "#",
+      "status": "Rejected",
+      "date": "2024-10-30"
+    }
+  ]
+}
