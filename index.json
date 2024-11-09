@@ -385,74 +385,124 @@
   ],
   "questions": [
     {
-      "id": "9d6a",
-      "jobId": "5",
-      "question": "Who is modi",
-      "answerChoices": [
-        "PM",
-        "President",
-        "Hero",
-        "Villain"
-      ],
-      "correctAnswer": "PM"
-    },
-    {
-      "question": "What is data ",
-      "answers": [
-        "the data ",
-        "a data ",
-        "he data ",
-        "she data"
-      ],
-      "correctAnswer": "the data ",
-      "id": "ede6"
-    },
-    {
+      "id": "8b22",
+      "jobId": "1",
       "question": "what is software",
       "answers": [
-        "the software",
         "a software",
+        "the software",
         "he software",
         "she software"
       ],
-      "correctAnswer": "the software",
-      "id": "8094"
+      "correctAnswer": "he software"
     },
     {
-      "id": "bbab",
+      "id": "0a03",
+      "jobId": "2",
+      "question": "what is data",
+      "answers": [
+        "a data ",
+        "the data",
+        "she data ",
+        "he data"
+      ],
+      "correctAnswer": "the data"
+    },
+    {
+      "id": "9185",
       "jobId": "3",
       "question": "what is product",
       "answers": [
-        "a product",
-        "the product",
         "he product",
+        "the product",
+        "a product",
         "she product"
       ],
-      "correctAnswer": "he product"
+      "correctAnswer": "the product"
     },
     {
-      "id": "45e2",
-      "jobId": "10",
-      "question": "what is scienece ",
+      "id": "78a2",
+      "jobId": "4",
+      "question": "what is ui",
       "answers": [
-        "the data",
-        "a data",
-        "she data",
-        "he data"
+        "a ui",
+        "he ui",
+        "she ui",
+        "the ui"
       ],
-      "correctAnswer": "a data"
+      "correctAnswer": "she ui"
     },
     {
-      "id": "f82f",
-      "jobId": "2",
-      "question": "what is fact",
+      "id": "a39d",
+      "jobId": "5",
+      "question": "what is mar",
       "answers": [
-        "a factt",
-        "he fact",
-        "the fact",
-        "she fact"
+        "a mar",
+        "she mar",
+        "",
+        "the mar"
       ],
-      "correctAnswer": "the fact"
+      "correctAnswer": "she mar"
+    },
+    {
+      "id": "3ad6",
+      "jobId": "6",
+      "question": "what is dev",
+      "answers": [
+        "a dev",
+        "the dev",
+        "",
+        ""
+      ],
+      "correctAnswer": "a dev"
+    },
+    {
+      "id": "1c50",
+      "jobId": "7",
+      "question": "what is ba",
+      "answers": [
+        "a ba",
+        "the ba",
+        "",
+        ""
+      ],
+      "correctAnswer": "the ba"
+    },
+    {
+      "id": "a321",
+      "jobId": "8",
+      "question": "what is pm",
+      "answers": [
+        "a pm",
+        "the pm",
+        "",
+        ""
+      ],
+      "correctAnswer": "the pm"
+    },
+    {
+      "id": "3ec1",
+      "jobId": "9",
+      "question": "what is qa",
+      "answers": [
+        "a qa",
+        "the qa",
+        "",
+        ""
+      ],
+      "correctAnswer": "the qa"
+    },
+    {
+      "id": "8c99",
+      "jobId": "3",
+      "question": "heelo",
+      "answers": [
+        "Atul",
+        "Cool",
+        "",
+        ""
+      ],
+      "correctAnswer": "Cool"
     }
   ],
   "applicants": [
@@ -491,7 +541,6 @@
       "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Rejected",
       "date": "2024-10-30"
-      
     },
     {
       "id": "5",

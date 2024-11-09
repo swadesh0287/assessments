@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Box, Typography, MenuItem, Select, InputLabel, FormControl, List, ListItem, ListItemText, IconButton, Alert, Grid } from '@mui/material';
 import axios from 'axios';
-import { useNavigate  } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import '@fontsource/poppins'; 
-
+import '@fontsource/poppins';
 
 function CreateAssessmentPage() {
-  
   const navigate = useNavigate();
   const [selectedJob, setSelectedJob] = useState('');
   const [questions, setQuestions] = useState([]);
@@ -17,9 +15,11 @@ function CreateAssessmentPage() {
   const [correctAnswer, setCorrectAnswer] = useState('');
   const [editingQuestionIndex, setEditingQuestionIndex] = useState(null);
   const [jobOptions, setJobOptions] = useState([]);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [duplicateWarning, setDuplicateWarning] = useState('');
+  const [errorFields, setErrorFields] = useState([]);
 
   useEffect(() => {
+    // Fetch all job options on component mount
     axios.get('http://localhost:5000/jobs')
       .then((response) => setJobOptions(response.data))
       .catch((error) => console.error('Error fetching jobs:', error));
@@ -27,6 +27,7 @@ function CreateAssessmentPage() {
 
   useEffect(() => {
     if (selectedJob) {
+      // Fetch questions for the selected job
       axios.get(`http://localhost:5000/questions?jobId=${selectedJob}`)
         .then((response) => setQuestions(response.data))
         .catch((error) => console.error('Error fetching questions:', error));
@@ -38,32 +39,79 @@ function CreateAssessmentPage() {
       alert('Please select a job first!');
       return;
     }
-
-    const isQuestionDuplicate = questions.some(
-      (q) => q.question.toLowerCase() === questionText.toLowerCase()
-    );
-    if (isQuestionDuplicate) {
-      setErrorMessage('This question already exists for this job.');
+  
+    // Clear previous error messages
+    setErrorFields([]);
+    setDuplicateWarning('');
+  
+    // Validation checks
+    const validationErrors = [];
+    if (!questionText.trim()) {
+      validationErrors.push('Question text cannot be empty.');
+    }
+  
+    // Ensure at least two answer choices are filled
+    const filledChoices = answerChoices.filter(choice => choice.trim());
+    if (filledChoices.length < 2) {
+      validationErrors.push('At least two answer choices must be provided.');
+    }
+  
+    // Ensure correct answer is selected
+    if (!correctAnswer.trim()) {
+      validationErrors.push('Correct answer must be selected.');
+    } else if (!answerChoices.includes(correctAnswer.trim())) {
+      validationErrors.push('Correct answer must be one of the answer choices.');
+    }
+  
+    if (validationErrors.length > 0) {
+      setErrorFields(validationErrors);
       return;
     }
-
-    const newQuestion = {
-      question: questionText,
-      answers: answerChoices,
-      correctAnswer,
-    };
-
-    axios.post(`http://localhost:5000/questions`, { jobId: selectedJob, ...newQuestion })
+  
+    // Fetch all questions to check for duplicates across jobs
+    axios.get('http://localhost:5000/questions')
       .then((response) => {
-        setQuestions((prev) => [...prev, response.data]);
-        setQuestionText('');
-        setAnswerChoices(['', '', '', '']);
-        setCorrectAnswer('');
-        setErrorMessage('');
+        const allQuestions = response.data;
+  
+        // Check for duplicate question in the same job
+        const isDuplicateInSameJob = allQuestions.some(
+          (q) => q.question.toLowerCase() === questionText.toLowerCase() && q.jobId === selectedJob
+        );
+  
+        if (isDuplicateInSameJob) {
+          setDuplicateWarning('This question already exists in the selected job.');
+          return;
+        }
+  
+        // Check for duplicate question across other jobs
+        const isDuplicateInOtherJobs = allQuestions.some(
+          (q) => q.question.toLowerCase() === questionText.toLowerCase() && q.jobId !== selectedJob
+        );
+  
+        if (isDuplicateInOtherJobs) {
+          setDuplicateWarning('This question is already used for another job.');
+          return;
+        }
+  
+        // If no duplicates, proceed to add the question
+        const newQuestion = {
+          question: questionText,
+          answers: answerChoices,
+          correctAnswer,
+        };
+  
+        axios.post(`http://localhost:5000/questions`, { jobId: selectedJob, ...newQuestion })
+          .then((response) => {
+            setQuestions((prev) => [...prev, response.data]);
+            setQuestionText('');
+            setAnswerChoices(['', '', '', '']);
+            setCorrectAnswer('');
+          })
+          .catch((error) => console.error('Error adding question:', error));
       })
-      .catch((error) => console.error('Error adding question:', error));
+      .catch((error) => console.error('Error fetching questions:', error));
   };
-
+  
   const handleDeleteQuestion = (questionId) => {
     axios.delete(`http://localhost:5000/questions/${questionId}`)
       .then(() => {
@@ -96,31 +144,28 @@ function CreateAssessmentPage() {
         setAnswerChoices(['', '', '', '']);
         setCorrectAnswer('');
         setEditingQuestionIndex(null);
-        setErrorMessage('');
       })
       .catch((error) => console.error('Error updating question:', error));
   };
 
   return (
     <Box sx={{ width: '100%', maxWidth: 1200, margin: 'auto', padding: 2 }}>
-     <Typography
-  variant="h4"
-  sx={{
-    textAlign: 'center',
-    marginBottom: 2,
-    fontWeight: '600', 
-    fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }, 
-    color: '#34495e', 
-    textTransform: 'uppercase',
-    letterSpacing: 2,
-    textShadow: '2px 2px 6px rgba(0, 0, 0, 0.1)', 
-    fontFamily: '"Poppins", sans-serif', 
-  }}
->
-  Create Assessment
-</Typography>
-
-
+      <Typography
+        variant="h4"
+        sx={{
+          textAlign: 'center',
+          marginBottom: 2,
+          fontWeight: '600',
+          fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
+          color: '#34495e',
+          textTransform: 'uppercase',
+          letterSpacing: 2,
+          textShadow: '2px 2px 6px rgba(0, 0, 0, 0.1)',
+          fontFamily: '"Poppins", sans-serif',
+        }}
+      >
+        Create Assessment
+      </Typography>
 
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
@@ -194,28 +239,26 @@ function CreateAssessmentPage() {
           </Button>
         </Grid>
 
-        {errorMessage && (
+        {duplicateWarning && (
           <Grid item xs={12}>
-            <Alert severity="error" sx={{ marginTop: 2 }}>
-              {errorMessage}
+            <Alert severity="warning" sx={{ marginTop: 2 }}>
+              {duplicateWarning}
             </Alert>
           </Grid>
         )}
 
         <Grid item xs={12}>
-          <Typography variant="h6" sx={{ marginTop: 4 }}>Existing Questions</Typography>
           <List>
-            {questions.map((question) => (
-              <ListItem key={question.id} sx={{ display: 'flex', alignItems: 'center' }}>
+            {questions.map((question, index) => (
+              <ListItem key={question.id}>
                 <ListItemText
                   primary={question.question}
                   secondary={`Correct Answer: ${question.correctAnswer}`}
-                  sx={{ flex: 1 }}
                 />
-                <IconButton onClick={() => handleEditQuestion(question.id)}>
+                <IconButton onClick={() => handleEditQuestion(index)} color="primary">
                   <EditIcon />
                 </IconButton>
-                <IconButton onClick={() => handleDeleteQuestion(question.id)}>
+                <IconButton onClick={() => handleDeleteQuestion(question.id)} color="secondary">
                   <DeleteIcon />
                 </IconButton>
               </ListItem>
@@ -223,8 +266,6 @@ function CreateAssessmentPage() {
           </List>
         </Grid>
       </Grid>
-      
-    
     </Box>
   );
 }
