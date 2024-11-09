@@ -3,6 +3,7 @@ import { Link, useParams,useNavigate  } from 'react-router-dom';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, MenuItem, Select, FormControl, InputLabel, Box, Grid, Typography, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import axios from 'axios';
 import '@fontsource/poppins'; 
+import { Edit as EditIcon } from '@mui/icons-material';
 
 function CandidateTrackingPage() {
   const { jobId } = useParams();
@@ -116,14 +117,19 @@ function CandidateTrackingPage() {
                     <TableCell>{candidate.date}</TableCell>
                     <TableCell>{candidate.status}</TableCell>
                     <TableCell>
-                      <Button
-                        onClick={() => handleOpenDialog(candidate)}
-                        variant="outlined"
-                        color="primary"
-                      >
-                        Update Status
-                      </Button>
-                    </TableCell>
+  <Button
+    onClick={() => handleOpenDialog(candidate)}
+    variant="outlined"
+    color="primary"
+    sx={{
+      minWidth: '0', // Reduce width for icon button
+      padding: '6px', // Adjust padding for icon
+      borderRadius: '50%',
+    }}
+  >
+    <EditIcon />
+  </Button>
+</TableCell>
                   </TableRow>
                 ))}
               </TableBody>

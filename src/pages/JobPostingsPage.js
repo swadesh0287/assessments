@@ -68,7 +68,7 @@ function JobPostingsPage() {
 
   return (
     <>
-    <div>
+    <div style={{'marginBottom':'20px'}}>
        <Typography
   variant="h4"
   sx={{

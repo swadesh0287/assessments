@@ -71,7 +71,15 @@ function CandidateDetailPage() {
   }
 
   return (
-    <Box sx={{ padding: { xs: 2, sm: 3, md: 4 }, maxWidth: '900px', margin: 'auto' }}>
+    <Box
+  sx={{
+    padding: { xs: 2, sm: 3, md: 4 },
+    maxWidth: { xs: '100%', sm: '50%', md: '30%' }, // Responsive max width
+    width: '100%',
+    margin: 'auto',
+    boxSizing: 'border-box', // Ensures padding doesn’t affect the overall width
+  }}
+>
       <Paper sx={{ padding: { xs: 2, sm: 3 }, borderRadius: 2, boxShadow: 3 }}>
         <Typography variant="h5" sx={{ fontSize: { xs: '1.5rem', sm: '2rem' }, fontWeight: 'bold' }}>
           {candidate.name}
@@ -99,32 +107,45 @@ function CandidateDetailPage() {
         <Box sx={{ marginTop: 2 }}>
           <Typography variant="h6">Status</Typography>
           <TextField
-            select
-            value={status}
-            onChange={handleStatusChange}
-            label="Status"
-            fullWidth
-            SelectProps={{
-              native: true,
-            }}
-            sx={{
-              marginTop: 1,
-              '& .MuiInputBase-root': {
-                padding: theme.spacing(1),
-              },
-            }}
-          >
-            <option value="Under Review">Under Review</option>
-            <option value="Interview Scheduled">Interview Scheduled</option>
-            <option value="Hired">Hired</option>
-            <option value="Rejected">Rejected</option>
-          </TextField>
+  select
+  value={status}
+  onChange={handleStatusChange}
+  label="Status"
+  SelectProps={{
+    native: true,
+  }}
+  sx={{
+    marginTop: 1,
+    width: { xs: '100%', sm: '70%', md: '70%' }, // Adjust width based on screen size
+    '& .MuiInputBase-root': {
+      padding: theme.spacing(1),
+    },
+  }}
+>
+  <option value="Under Review">Under Review</option>
+  <option value="Interview Scheduled">Interview Scheduled</option>
+  <option value="Hired">Hired</option>
+  <option value="Rejected">Rejected</option>
+</TextField>
+
         </Box>
 
         <Box sx={{ marginTop: 2 }}>
-          <Button variant="contained" color="primary" onClick={handleSaveStatus} fullWidth sx={{ padding: '12px', fontSize: '1rem' }}>
-            Save Status
-          </Button>
+        <Button
+  variant="contained"
+  color="primary"
+  onClick={handleSaveStatus}
+  sx={{
+    padding: '8px 16px', // Reduced padding for a smaller button
+    fontSize: '1rem',
+    width: { xs: '100%', sm: 'auto' }, // Full width on extra-small screens, auto width on larger screens
+    display: 'block',
+    margin: 'auto 0', // Centers the button
+  }}
+>
+  Save Status
+</Button>
+
         </Box>
       </Paper>
 

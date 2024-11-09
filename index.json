@@ -59,12 +59,6 @@
       "title": "Sales Executive",
       "description": "Generate leads, build relationships, and close sales to drive company revenue.",
       "applicants": 20
-    },
-    {
-      "id": "25ab",
-      "title": "IT Helpdesk",
-      "description": "Help people",
-      "applicants": "2"
     }
   ],
   "candidates": [
@@ -73,56 +67,20 @@
       "id": "1"
     },
     {
-      "id": "2",
-      "name": "Jane Smith",
-      "jobId": 1,
-      "email": "jane.smith@example.com",
-      "resumeLink": "#",
       "status": "Interview Scheduled",
-      "date": "2024-11-03",
-      "phone": "987-654-3210",
-      "skills": [
-        "Python",
-        "Django",
-        "SQL"
-      ],
-      "experience": "5 years"
+      "id": "2"
     },
     {
       "status": "Under Review",
       "id": "3"
     },
     {
-      "id": "4",
-      "name": "Bob Brown",
-      "jobId": 1,
-      "email": "bob.brown@example.com",
-      "resumeLink": "#",
       "status": "Rejected",
-      "date": "2024-11-05",
-      "phone": "444-567-8901",
-      "skills": [
-        "C#",
-        ".NET",
-        "Azure"
-      ],
-      "experience": "4 years"
+      "id": "4"
     },
     {
-      "id": "5",
-      "name": "Sarah Lee",
-      "jobId": 1,
-      "email": "sarah.lee@example.com",
-      "resumeLink": "#",
-      "status": "Under Review",
-      "date": "2024-11-06",
-      "phone": "333-678-1234",
-      "skills": [
-        "Ruby",
-        "Rails",
-        "PostgreSQL"
-      ],
-      "experience": "2 years"
+      "status": "Interview Scheduled",
+      "id": "5"
     },
     {
       "id": "6",
