@@ -1,5 +1,7 @@
+// HomePage.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { setSelectedContent } from '../redux/slices/contentSlice';
 import {
   Box,
   Drawer,
@@ -33,17 +35,22 @@ function AssessmentContent() {
 }
 
 function HomePage() {
-  const navigate = useNavigate();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [bottomNavValue, setBottomNavValue] = useState(0);
-  const [selectedContent, setSelectedContent] = useState('jobs');
+
+  const selectedContent = useSelector((state) => state.content.selectedContent);
+  const dispatch = useDispatch();
 
   const sidebarItems = [
     { icon: <WorkIcon />, label: 'Jobs', content: 'jobs' },
     { icon: <AssessmentIcon />, label: 'Assessment', content: 'assessment' },
   ];
+
+  const handleContentChange = (content) => {
+    dispatch(setSelectedContent(content));
+  };
 
   const Sidebar = () => (
     <Drawer
@@ -73,7 +80,7 @@ function HomePage() {
         {sidebarItems.map((item, index) => (
           <IconButton
             key={index}
-            onClick={() => setSelectedContent(item.content)}
+            onClick={() => handleContentChange(item.content)}
             sx={{
               display: 'flex',
               flexDirection: isSidebarOpen ? 'row' : 'column',
@@ -107,7 +114,7 @@ function HomePage() {
       value={bottomNavValue}
       onChange={(event, newValue) => {
         setBottomNavValue(newValue);
-        setSelectedContent(sidebarItems[newValue].content);
+        handleContentChange(sidebarItems[newValue].content);
       }}
       sx={{
         display: { xs: 'flex', sm: 'none' },
