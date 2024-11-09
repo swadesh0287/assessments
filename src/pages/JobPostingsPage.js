@@ -111,6 +111,28 @@ function JobPostingsPage() {
 >
   Add New Job
 </Button>
+<Button
+  variant="contained"
+  color="primary"
+  onClick={() => navigate(`/`)}
+  sx={{
+    margin: 2,
+    
+    borderRadius: '12px', 
+    padding: '10px 20px', 
+    fontWeight: 'bold', 
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
+    transition: 'all 0.3s ease', 
+    '&:hover': {
+      backgroundColor: 'primary.main', 
+      boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', 
+      transform: 'scale(1.05)',
+    },
+  }}
+>
+  Back to Home
+</Button>
+
         <TableContainer component={Paper} sx={{ maxWidth: '100%', overflowX: 'auto' }}>
           <Table sx={{ minWidth: 650 }}>
             <TableHead>

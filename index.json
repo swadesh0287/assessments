@@ -493,8 +493,6 @@
       "correctAnswer": "the qa"
     },
     {
-      "id": "8c99",
-      "jobId": "3",
       "question": "heelo",
       "answers": [
         "Atul",
@@ -502,7 +500,8 @@
         "",
         ""
       ],
-      "correctAnswer": "Cool"
+      "correctAnswer": "Atul",
+      "id": "8c99"
     }
   ],
   "applicants": [
