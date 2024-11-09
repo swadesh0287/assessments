@@ -110,9 +110,14 @@ function CandidateTrackingPage() {
                       </Link>
                     </TableCell>
                     <TableCell>
-                      <a href={candidate.resumeLink} target="_blank" rel="noopener noreferrer">
-                        View Resume
-                      </a>
+                    <Link
+                href={candidate.resumeLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ fontWeight: 'bold', display: 'block', marginBottom: 1 }}
+              >
+                View Resume
+              </Link>
                     </TableCell>
                     <TableCell>{candidate.date}</TableCell>
                     <TableCell>{candidate.status}</TableCell>

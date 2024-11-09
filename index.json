@@ -99,20 +99,8 @@
       "experience": "6 years"
     },
     {
-      "id": "7",
-      "name": "Emily Clark",
-      "jobId": 2,
-      "email": "emily.clark@example.com",
-      "resumeLink": "#",
-      "status": "Under Review",
-      "date": "2024-11-02",
-      "phone": "888-234-5678",
-      "skills": [
-        "JavaScript",
-        "Vue",
-        "GraphQL"
-      ],
-      "experience": "4 years"
+      "status": "Hired",
+      "id": "7"
     },
     {
       "status": "Under Review",
@@ -123,7 +111,7 @@
       "name": "Angela Martin",
       "jobId": 2,
       "email": "angela.martin@example.com",
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Under Review",
       "date": "2024-11-05",
       "phone": "555-987-6543",
