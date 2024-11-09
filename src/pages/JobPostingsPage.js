@@ -217,29 +217,6 @@ function JobPostingsPage() {
       
     </div>
     
-    <Button
-  variant="contained"
-  color="primary"
-  onClick={() => navigate(`/`)}
-  sx={{
-    position: 'fixed',
-    bottom: '20px', // Distance from the bottom of the viewport
-    left: '50%',
-    transform: 'translateX(-50%)', // Centers the button horizontally
-    borderRadius: '12px', 
-    padding: '10px 20px', 
-    fontWeight: 'bold', 
-    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
-    transition: 'all 0.3s ease', 
-    '&:hover': {
-      backgroundColor: 'primary.main', 
-      boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', 
-      transform: 'scale(1.05)',
-    },
-  }}
->
-  Back to Home
-</Button>
     </>
   );
 }

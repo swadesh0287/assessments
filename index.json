@@ -63,31 +63,91 @@
   ],
   "candidates": [
     {
+      "id": "1",
+      "name": "Michael Scott",
+      "jobId": 1,
+      "email": "michael.scott@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Hired",
-      "id": "1"
+      "date": "2024-10-25",
+      "phone": "555-123-4567",
+      "skills": [
+        "Management",
+        "Leadership",
+        "Sales"
+      ],
+      "experience": "10 years"
     },
     {
+      "id": "2",
+      "name": "Dwight Schrute",
+      "jobId": 1,
+      "email": "dwight.schrute@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Interview Scheduled",
-      "id": "2"
+      "date": "2024-10-27",
+      "phone": "555-234-5678",
+      "skills": [
+        "Sales",
+        "Management",
+        "Negotiation"
+      ],
+      "experience": "6 years"
     },
     {
+      "id": "3",
+      "name": "Jim Halpert",
+      "jobId": 2,
+      "email": "jim.halpert@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Under Review",
-      "id": "3"
+      "date": "2024-10-29",
+      "phone": "555-345-6789",
+      "skills": [
+        "Sales",
+        "Communication",
+        "Marketing"
+      ],
+      "experience": "4 years"
     },
     {
+      "id": "4",
+      "name": "Pam Beesly",
+      "jobId": 2,
+      "email": "pam.beesly@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Rejected",
-      "id": "4"
+      "date": "2024-10-30",
+      "phone": "555-456-7890",
+      "skills": [
+        "Design",
+        "Photoshop",
+        "Illustrator"
+      ],
+      "experience": "2 years"
     },
     {
+      "id": "5",
+      "name": "Ryan Howard",
+      "jobId": 2,
+      "email": "ryan.howard@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Interview Scheduled",
-      "id": "5"
+      "date": "2024-10-28",
+      "phone": "555-567-8901",
+      "skills": [
+        "Marketing",
+        "Data Analysis",
+        "Salesforce"
+      ],
+      "experience": "3 years"
     },
     {
       "id": "6",
       "name": "Chris Evans",
       "jobId": 2,
       "email": "chris.evans@example.com",
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Interview Scheduled",
       "date": "2024-10-29",
       "phone": "777-456-8901",
@@ -99,12 +159,36 @@
       "experience": "6 years"
     },
     {
+      "id": "7",
+      "name": "Kelly Kapoor",
+      "jobId": 3,
+      "email": "kelly.kapoor@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Hired",
-      "id": "7"
+      "date": "2024-10-26",
+      "phone": "555-678-1234",
+      "skills": [
+        "Customer Service",
+        "Sales",
+        "Communication"
+      ],
+      "experience": "5 years"
     },
     {
+      "id": "8",
+      "name": "Angela Martin",
+      "jobId": 2,
+      "email": "angela.martin@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Under Review",
-      "id": "8"
+      "date": "2024-11-05",
+      "phone": "555-987-6543",
+      "skills": [
+        "Swift",
+        "iOS",
+        "Xcode"
+      ],
+      "experience": "3 years"
     },
     {
       "id": "9",
@@ -374,73 +458,81 @@
   "applicants": [
     {
       "id": "1",
-      "name": "John Doe",
+      "name": "Michael Scott",
       "jobId": 1,
-      "resumeLink": "#",
-      "status": "Under Review",
-      "date": "2024-11-01"
+      "email": "michael.scott@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
+      "status": "Hired",
+      "date": "2024-10-25"
     },
     {
       "id": "2",
-      "name": "Jane Smith",
+      "name": "Dwight Schrute",
       "jobId": 1,
-      "resumeLink": "#",
+      "email": "dwight.schrute@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Interview Scheduled",
-      "date": "2024-11-03"
+      "date": "2024-10-27"
     },
     {
       "id": "3",
-      "name": "Alice Johnson",
-      "jobId": 1,
-      "resumeLink": "#",
-      "status": "Hired",
-      "date": "2024-10-28"
+      "name": "Jim Halpert",
+      "jobId": 2,
+      "email": "jim.halpert@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
+      "status": "Under Review",
+      "date": "2024-10-29"
     },
     {
       "id": "4",
-      "name": "Bob Brown",
-      "jobId": 1,
-      "resumeLink": "#",
+      "name": "Pam Beesly",
+      "jobId": 2,
+      "email": "pam.beesly@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Rejected",
-      "date": "2024-11-05"
+      "date": "2024-10-30"
+      
     },
     {
       "id": "5",
-      "name": "Sarah Lee",
-      "jobId": 1,
-      "resumeLink": "#",
-      "status": "Under Review",
-      "date": "2024-11-06"
+      "name": "Ryan Howard",
+      "jobId": 2,
+      "email": "ryan.howard@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
+      "status": "Interview Scheduled",
+      "date": "2024-10-28"
     },
     {
       "id": "6",
       "name": "Chris Evans",
       "jobId": 2,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Interview Scheduled",
       "date": "2024-10-29"
     },
     {
       "id": "7",
-      "name": "Emily Clark",
-      "jobId": 2,
-      "resumeLink": "#",
-      "status": "Under Review",
-      "date": "2024-11-02"
+      "name": "Kelly Kapoor",
+      "jobId": 3,
+      "email": "kelly.kapoor@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
+      "status": "Hired",
+      "date": "2024-10-26"
     },
     {
       "id": "8",
-      "name": "Michael Scott",
+      "name": "Angela Martin",
       "jobId": 2,
-      "resumeLink": "#",
-      "status": "Hired",
-      "date": "2024-11-01"
+      "email": "angela.martin@example.com",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
+      "status": "Under Review",
+      "date": "2024-11-05"
     },
     {
       "id": "9",
       "name": "Angela Martin",
       "jobId": 2,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Under Review",
       "date": "2024-11-05"
     },
@@ -448,7 +540,7 @@
       "id": "10",
       "name": "Oscar Martinez",
       "jobId": 2,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Rejected",
       "date": "2024-10-30"
     },
@@ -456,7 +548,7 @@
       "id": "11",
       "name": "Pam Beesly",
       "jobId": 3,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Under Review",
       "date": "2024-11-04"
     },
@@ -464,7 +556,7 @@
       "id": "12",
       "name": "Jim Halpert",
       "jobId": 3,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Interview Scheduled",
       "date": "2024-10-30"
     },
@@ -472,7 +564,7 @@
       "id": "13",
       "name": "Dwight Schrute",
       "jobId": 3,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Hired",
       "date": "2024-11-06"
     },
@@ -480,7 +572,7 @@
       "id": "14",
       "name": "Stanley Hudson",
       "jobId": 3,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Rejected",
       "date": "2024-11-03"
     },
@@ -488,7 +580,7 @@
       "id": "15",
       "name": "Phyllis Vance",
       "jobId": 3,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Under Review",
       "date": "2024-11-05"
     },
@@ -496,7 +588,7 @@
       "id": "16",
       "name": "Holly Flax",
       "jobId": 4,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Interview Scheduled",
       "date": "2024-10-29"
     },
@@ -504,7 +596,7 @@
       "id": "17",
       "name": "Roy Anderson",
       "jobId": 4,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Under Review",
       "date": "2024-10-31"
     },
@@ -512,7 +604,7 @@
       "id": "18",
       "name": "Erin Hannon",
       "jobId": 4,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Hired",
       "date": "2024-11-02"
     },
@@ -520,7 +612,7 @@
       "id": "19",
       "name": "Karen Filippelli",
       "jobId": 4,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Under Review",
       "date": "2024-11-03"
     },
@@ -528,7 +620,7 @@
       "id": "20",
       "name": "Meredith Palmer",
       "jobId": 4,
-      "resumeLink": "#",
+      "resumeLink": "https://www.docdroid.net/WyjIuyO/fake-resume-pdf",
       "status": "Rejected",
       "date": "2024-10-30"
     }
