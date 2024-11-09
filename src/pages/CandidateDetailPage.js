@@ -59,39 +59,39 @@ function CandidateDetailPage() {
   };
 
   if (loading) {
-    return <CircularProgress />;
+    return <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}><CircularProgress /></Box>;
   }
 
   if (error) {
-    return <Typography variant="h6" color="error">{`Error: ${error}`}</Typography>;
+    return <Typography variant="h6" color="error" sx={{ textAlign: 'center', paddingTop: 4 }}>{`Error: ${error}`}</Typography>;
   }
 
   if (!candidate) {
-    return <Typography variant="h6" color="error">Candidate not found</Typography>;
+    return <Typography variant="h6" color="error" sx={{ textAlign: 'center', paddingTop: 4 }}>Candidate not found</Typography>;
   }
 
   return (
     <Box sx={{ padding: { xs: 2, sm: 3, md: 4 }, maxWidth: '900px', margin: 'auto' }}>
-      <Paper sx={{ padding: { xs: 2, sm: 3 }, borderRadius: 2 }}>
-        <Typography variant="h5" sx={{ fontSize: { xs: '1.5rem', sm: '2rem' } }}>
+      <Paper sx={{ padding: { xs: 2, sm: 3 }, borderRadius: 2, boxShadow: 3 }}>
+        <Typography variant="h5" sx={{ fontSize: { xs: '1.5rem', sm: '2rem' }, fontWeight: 'bold' }}>
           {candidate.name}
         </Typography>
         <Typography variant="body1" sx={{ marginTop: 1 }}>
-          Email: {candidate.email}
+          <strong>Email:</strong> {candidate.email}
         </Typography>
         <Typography variant="body1" sx={{ marginTop: 1 }}>
-          Phone: {candidate.phone}
+          <strong>Phone:</strong> {candidate.phone}
         </Typography>
         <Typography variant="body1" sx={{ marginTop: 1 }}>
-          Skills: {candidate.skills}
+          <strong>Skills:</strong> {candidate.skills}
         </Typography>
         <Typography variant="body1" sx={{ marginTop: 1 }}>
-          Experience: {candidate.experience}
+          <strong>Experience:</strong> {candidate.experience}
         </Typography>
 
         <Box sx={{ marginTop: 2 }}>
           <Typography variant="h6">Resume</Typography>
-          <Link href={candidate.resumeUrl} target="_blank" rel="noopener noreferrer" sx={{ fontWeight: 'bold' }}>
+          <Link href={candidate.resumeUrl} target="_blank" rel="noopener noreferrer" sx={{ fontWeight: 'bold', display: 'block', marginTop: 1 }}>
             Download Resume
           </Link>
         </Box>
@@ -122,13 +122,33 @@ function CandidateDetailPage() {
         </Box>
 
         <Box sx={{ marginTop: 2 }}>
-          <Button variant="contained" color="primary" onClick={handleSaveStatus} fullWidth sx={{ padding: '10px' }}>
+          <Button variant="contained" color="primary" onClick={handleSaveStatus} fullWidth sx={{ padding: '12px', fontSize: '1rem' }}>
             Save Status
           </Button>
         </Box>
       </Paper>
 
-      <Button sx={{ marginTop: 2, display: 'block', width: '100%' }} variant="outlined" onClick={() => navigate(`/job/${jobId}/candidates`)}>
+      <Button
+  variant="contained"
+  color="primary"
+  onClick={() => navigate(`/candidates/${jobId}`)}
+  sx={{
+    position: 'fixed',
+    bottom: '20px', // Distance from the bottom of the viewport
+    left: '50%',
+    transform: 'translateX(-50%)', // Centers the button horizontally
+    borderRadius: '12px', 
+    padding: '10px 20px', 
+    fontWeight: 'bold', 
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
+    transition: 'all 0.3s ease', 
+    '&:hover': {
+      backgroundColor: 'primary.main', 
+      boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', 
+      transform: 'scale(1.05)',
+    },
+  }}
+>
         Back to Candidates
       </Button>
     </Box>

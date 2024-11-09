@@ -3,7 +3,7 @@
     {
       "title": "Software Engineer",
       "description": "Analyze and interpret complex data to help organizations make decisions.",
-      "applicants": 5,
+      "applicants": "6",
       "id": "1"
     },
     {
@@ -69,20 +69,8 @@
   ],
   "candidates": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "jobId": 1,
-      "email": "john.doe@example.com",
-      "resumeLink": "#",
-      "status": "Under Review",
-      "date": "2024-11-01",
-      "phone": "123-456-7890",
-      "skills": [
-        "JavaScript",
-        "React",
-        "Node.js"
-      ],
-      "experience": "3 years"
+      "status": "Hired",
+      "id": "1"
     },
     {
       "id": "2",
@@ -101,20 +89,8 @@
       "experience": "5 years"
     },
     {
-      "id": "3",
-      "name": "Alice Johnson",
-      "jobId": 1,
-      "email": "alice.johnson@example.com",
-      "resumeLink": "#",
-      "status": "Hired",
-      "date": "2024-10-28",
-      "phone": "555-123-4567",
-      "skills": [
-        "Java",
-        "Spring",
-        "MySQL"
-      ],
-      "experience": "7 years"
+      "status": "Under Review",
+      "id": "3"
     },
     {
       "id": "4",
@@ -181,20 +157,8 @@
       "experience": "4 years"
     },
     {
-      "id": "8",
-      "name": "Michael Scott",
-      "jobId": 2,
-      "email": "michael.scott@example.com",
-      "resumeLink": "#",
-      "status": "Hired",
-      "date": "2024-11-01",
-      "phone": "666-345-7890",
-      "skills": [
-        "PHP",
-        "Laravel",
-        "MySQL"
-      ],
-      "experience": "8 years"
+      "status": "Under Review",
+      "id": "8"
     },
     {
       "id": "9",
@@ -410,12 +374,10 @@
         "he data ",
         "she data"
       ],
-      "correctAnswer": "he data ",
+      "correctAnswer": "the data ",
       "id": "ede6"
     },
     {
-      "id": "8094",
-      "jobId": "1",
       "question": "what is software",
       "answers": [
         "the software",
@@ -423,7 +385,8 @@
         "he software",
         "she software"
       ],
-      "correctAnswer": "a software"
+      "correctAnswer": "the software",
+      "id": "8094"
     },
     {
       "id": "bbab",
@@ -436,6 +399,30 @@
         "she product"
       ],
       "correctAnswer": "he product"
+    },
+    {
+      "id": "45e2",
+      "jobId": "10",
+      "question": "what is scienece ",
+      "answers": [
+        "the data",
+        "a data",
+        "she data",
+        "he data"
+      ],
+      "correctAnswer": "a data"
+    },
+    {
+      "id": "f82f",
+      "jobId": "2",
+      "question": "what is fact",
+      "answers": [
+        "a factt",
+        "he fact",
+        "the fact",
+        "she fact"
+      ],
+      "correctAnswer": "the fact"
     }
   ],
   "applicants": [

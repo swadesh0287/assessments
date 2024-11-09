@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams,useNavigate  } from 'react-router-dom';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, MenuItem, Select, FormControl, InputLabel, Box, Grid, Typography, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
 import axios from 'axios';
+import '@fontsource/poppins'; 
 
 function CandidateTrackingPage() {
   const { jobId } = useParams();
+  const navigate = useNavigate();
 
   // State to store the candidates data
   const [candidates, setCandidates] = useState([]);
@@ -64,27 +66,43 @@ function CandidateTrackingPage() {
   if (error) return <Typography color="error">{error}</Typography>;
 
   return (
-    <Box sx={{ padding: 2 }}>
-      <Typography variant="h5" gutterBottom>
+    <>
+    <Typography
+  variant="h4"
+  sx={{
+    textAlign: 'center',
+    marginBottom: 2,
+    fontWeight: '600',
+    fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' }, 
+    color: '#34495e', 
+    textTransform: 'uppercase', 
+    letterSpacing: 2,
+    textShadow: '2px 2px 6px rgba(0, 0, 0, 0.1)', 
+    fontFamily: '"Poppins", sans-serif', 
+  }}
+>
         Candidate Tracking for Job {jobId}
       </Typography>
-      
+    
+    
+    <Box sx={{ padding: 2, display: 'flex', justifyContent: 'center' }}>
+
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <TableContainer component={Paper}>
+          <TableContainer component={Paper} sx={{ width: '80%', margin: '0 auto' }}>
             <Table>
-              <TableHead>
+              <TableHead sx={{ backgroundColor: '#1976d2' }}>
                 <TableRow>
-                  <TableCell>Candidate Name</TableCell>
-                  <TableCell>Resume</TableCell>
-                  <TableCell>Application Date</TableCell>
-                  <TableCell>Status</TableCell>
-                  <TableCell>Actions</TableCell>
+                  <TableCell sx={{ color: 'white' }}>Candidate Name</TableCell>
+                  <TableCell sx={{ color: 'white' }}>Resume</TableCell>
+                  <TableCell sx={{ color: 'white' }}>Application Date</TableCell>
+                  <TableCell sx={{ color: 'white' }}>Status</TableCell>
+                  <TableCell sx={{ color: 'white' }}>Actions</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {candidates.map((candidate) => (
-                  <TableRow key={candidate.id}>
+                  <TableRow key={candidate.id} sx={{ '&:hover': { backgroundColor: '#f5f5f5' } }}>
                     <TableCell>
                       <Link to={`/job/${jobId}/candidate/${candidate.id}`} style={{ textDecoration: 'none' }}>
                         {candidate.name}
@@ -141,7 +159,34 @@ function CandidateTrackingPage() {
           </Button>
         </DialogActions>
       </Dialog>
+
+      
     </Box>
+    <Button
+  variant="contained"
+  color="primary"
+  onClick={() => navigate(`/jobs`)}
+  sx={{
+    position: 'fixed',
+    bottom: '20px', // Distance from the bottom of the viewport
+    left: '50%',
+    transform: 'translateX(-50%)', // Centers the button horizontally
+    borderRadius: '12px', 
+    padding: '10px 20px', 
+    fontWeight: 'bold', 
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
+    transition: 'all 0.3s ease', 
+    '&:hover': {
+      backgroundColor: 'primary.main', 
+      boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', 
+      transform: 'scale(1.05)',
+    },
+  }}
+>
+  Back to Jobs
+</Button>
+
+    </>
   );
 }
 
