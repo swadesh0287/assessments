@@ -1,4 +1,3 @@
-// pages/NotFoundPage.js
 import React from 'react';
 
 function NotFoundPage() {

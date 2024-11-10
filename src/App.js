@@ -1,4 +1,3 @@
-// App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -13,8 +12,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<HomePage />} />   {/* Home route */}
-        <Route path="*" element={<NotFoundPage />} />  {/* Fallback route */}
+        <Route path="/" element={<HomePage />} />   
+        <Route path="*" element={<NotFoundPage />} />  
         <Route path="/jobs" element={<JobPostingsPage />} />
         <Route path="/candidates/:jobId" element={<CandidateTrackingPage />} />
         <Route path="/job/:jobId/candidate/:candidateId" element={<CandidateDetailPage />} />

@@ -9,17 +9,14 @@ function CandidateTrackingPage() {
   const { jobId } = useParams();
   const navigate = useNavigate();
 
-  // State to store the candidates data
   const [candidates, setCandidates] = useState([]);
-  const [loading, setLoading] = useState(true);  // To show loading state
-  const [error, setError] = useState('');  // To store error message if fetching fails
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState('');  
 
-  // State for dialog box visibility and selected candidate's information
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedCandidate, setSelectedCandidate] = useState(null);
   const [newStatus, setNewStatus] = useState('');
 
-  // Fetch candidates data from the API
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
@@ -35,7 +32,6 @@ function CandidateTrackingPage() {
     fetchCandidates();
   }, [jobId]);
 
-  // Function to handle status change
   const handleStatusChange = (id, newStatus) => {
     const updatedCandidates = candidates.map(candidate =>
       candidate.id === id ? { ...candidate, status: newStatus } : candidate
@@ -43,19 +39,16 @@ function CandidateTrackingPage() {
     setCandidates(updatedCandidates);
   };
 
-  // Open the dialog with selected candidate
   const handleOpenDialog = (candidate) => {
     setSelectedCandidate(candidate);
-    setNewStatus(candidate.status); // Set current status as default
+    setNewStatus(candidate.status); 
     setOpenDialog(true);
   };
 
-  // Close the dialog
   const handleCloseDialog = () => {
     setOpenDialog(false);
   };
 
-  // Save the new status for the selected candidate
   const handleSaveStatus = () => {
     if (selectedCandidate) {
       handleStatusChange(selectedCandidate.id, newStatus);
@@ -127,8 +120,8 @@ function CandidateTrackingPage() {
     variant="outlined"
     color="primary"
     sx={{
-      minWidth: '0', // Reduce width for icon button
-      padding: '6px', // Adjust padding for icon
+      minWidth: '0', 
+      padding: '6px',
       borderRadius: '50%',
     }}
   >
@@ -179,9 +172,9 @@ function CandidateTrackingPage() {
   onClick={() => navigate(`/jobs`)}
   sx={{
     position: 'fixed',
-    bottom: '20px', // Distance from the bottom of the viewport
+    bottom: '20px', 
     left: '50%',
-    transform: 'translateX(-50%)', // Centers the button horizontally
+    transform: 'translateX(-50%)', 
     borderRadius: '12px', 
     padding: '10px 20px', 
     fontWeight: 'bold', 
@@ -190,7 +183,7 @@ function CandidateTrackingPage() {
     '&:hover': {
       backgroundColor: 'primary.main', 
       boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', 
-      transform: 'scale(1.05)',
+      
     },
   }}
 >

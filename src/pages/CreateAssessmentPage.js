@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { TextField, Button, Box, Typography, MenuItem, Select, InputLabel, FormControl, List, ListItem, ListItemText, IconButton, Alert, Grid } from '@mui/material';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import '@fontsource/poppins';
 
 function CreateAssessmentPage() {
-  const navigate = useNavigate();
+ 
   const [selectedJob, setSelectedJob] = useState('');
   const [questions, setQuestions] = useState([]);
   const [questionText, setQuestionText] = useState('');
@@ -19,7 +18,6 @@ function CreateAssessmentPage() {
   const [errorFields, setErrorFields] = useState([]);
 
   useEffect(() => {
-    // Fetch all job options on component mount
     axios.get('http://localhost:5000/jobs')
       .then((response) => setJobOptions(response.data))
       .catch((error) => console.error('Error fetching jobs:', error));
@@ -27,7 +25,6 @@ function CreateAssessmentPage() {
 
   useEffect(() => {
     if (selectedJob) {
-      // Fetch questions for the selected job
       axios.get(`http://localhost:5000/questions?jobId=${selectedJob}`)
         .then((response) => setQuestions(response.data))
         .catch((error) => console.error('Error fetching questions:', error));
@@ -39,24 +36,20 @@ function CreateAssessmentPage() {
       alert('Please select a job first!');
       return;
     }
-  
-    // Clear previous error messages
+
     setErrorFields([]);
     setDuplicateWarning('');
-  
-    // Validation checks
+
     const validationErrors = [];
     if (!questionText.trim()) {
       validationErrors.push('Question text cannot be empty.');
     }
-  
-    // Ensure at least two answer choices are filled
+
     const filledChoices = answerChoices.filter(choice => choice.trim());
     if (filledChoices.length < 2) {
       validationErrors.push('At least two answer choices must be provided.');
     }
-  
-    // Ensure correct answer is selected
+
     if (!correctAnswer.trim()) {
       validationErrors.push('Correct answer must be selected.');
     } else if (!answerChoices.includes(correctAnswer.trim())) {
@@ -67,13 +60,11 @@ function CreateAssessmentPage() {
       setErrorFields(validationErrors);
       return;
     }
-  
-    // Fetch all questions to check for duplicates across jobs
+
     axios.get('http://localhost:5000/questions')
       .then((response) => {
         const allQuestions = response.data;
   
-        // Check for duplicate question in the same job
         const isDuplicateInSameJob = allQuestions.some(
           (q) => q.question.toLowerCase() === questionText.toLowerCase() && q.jobId === selectedJob
         );
@@ -82,8 +73,7 @@ function CreateAssessmentPage() {
           setDuplicateWarning('This question already exists in the selected job.');
           return;
         }
-  
-        // Check for duplicate question across other jobs
+
         const isDuplicateInOtherJobs = allQuestions.some(
           (q) => q.question.toLowerCase() === questionText.toLowerCase() && q.jobId !== selectedJob
         );
@@ -92,8 +82,7 @@ function CreateAssessmentPage() {
           setDuplicateWarning('This question is already used for another job.');
           return;
         }
-  
-        // If no duplicates, proceed to add the question
+
         const newQuestion = {
           question: questionText,
           answers: answerChoices,

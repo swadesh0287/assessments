@@ -1,4 +1,3 @@
-// store.js
 import { configureStore } from '@reduxjs/toolkit';
 import contentReducer from './slices/contentSlice';
 import jobReducer from './slices/jobSlice';

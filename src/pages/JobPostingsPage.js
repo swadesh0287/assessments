@@ -1,8 +1,7 @@
-// src/components/JobPostingsPage.js
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Grid, Box, Typography } from '@mui/material';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button, TextField, Dialog, DialogActions, DialogContent, DialogTitle, Box, Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -11,6 +10,7 @@ import { fetchJobs, addJob, updateJob, deleteJob } from '../redux/slices/jobSlic
 
 function JobPostingsPage() {
   const navigate = useNavigate();
+  const location = useLocation();  
   const dispatch = useDispatch();
   const jobs = useSelector((state) => state.jobs.jobs);
 
@@ -60,9 +60,11 @@ function JobPostingsPage() {
           <Button variant="contained" color="primary" onClick={() => handleOpen()} sx={{ margin: 2, borderRadius: '12px', padding: '10px 20px', fontWeight: 'bold', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)', transition: 'all 0.3s ease', '&:hover': { backgroundColor: 'primary.main', boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', transform: 'scale(1.05)' } }}>
             Add New Job
           </Button>
-          <Button variant="contained" color="primary" onClick={() => navigate(`/`)} sx={{ margin: 2, borderRadius: '12px', padding: '10px 20px', fontWeight: 'bold', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)', transition: 'all 0.3s ease', '&:hover': { backgroundColor: 'primary.main', boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', transform: 'scale(1.05)' } }}>
-            Back to Home
-          </Button>
+          {location.pathname !== '/' && (
+            <Button variant="contained" color="primary" onClick={() => navigate(`/`)} sx={{ margin: 2, borderRadius: '12px', padding: '10px 20px', fontWeight: 'bold', boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)', transition: 'all 0.3s ease', '&:hover': { backgroundColor: 'primary.main', boxShadow: '0 6px 15px rgba(0, 0, 0, 0.2)', transform: 'scale(1.05)' } }}>
+              Back to Home
+            </Button>
+          )}
           <TableContainer component={Paper} sx={{ maxWidth: '100%', overflowX: 'auto' }}>
             <Table sx={{ minWidth: 650 }}>
               <TableHead>
@@ -92,7 +94,6 @@ function JobPostingsPage() {
         </Box>
       </div>
 
-      {/* Add/Edit Job Dialog */}
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>{editingJob ? 'Edit Job' : 'Add Job'}</DialogTitle>
         <DialogContent>

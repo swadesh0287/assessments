@@ -1,4 +1,3 @@
-// HomePage.js
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setSelectedContent } from '../redux/slices/contentSlice';
@@ -44,7 +43,7 @@ function HomePage() {
   const dispatch = useDispatch();
 
   const sidebarItems = [
-    { icon: <WorkIcon />, label: 'Jobs', content: 'jobs' },
+    { icon: <WorkIcon />, label: 'Job Posting', content: 'jobs' },
     { icon: <AssessmentIcon />, label: 'Assessment', content: 'assessment' },
   ];
 
@@ -133,7 +132,7 @@ function HomePage() {
           sx={{
             color: '#fff',
             '&.Mui-selected': {
-              color: '#ffcc00', // Change color on selection for emphasis
+              color: '#ffcc00', 
             },
           }}
         />

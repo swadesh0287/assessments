@@ -1,10 +1,9 @@
-// contentSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const contentSlice = createSlice({
   name: 'content',
   initialState: {
-    selectedContent: 'jobs', // Default content
+    selectedContent: 'jobs', 
   },
   reducers: {
     setSelectedContent: (state, action) => {
