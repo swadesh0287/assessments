@@ -14,7 +14,7 @@ function CandidateDetailPage() {
     const fetchCandidateData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`https://swadesh0287.github.io/assessments/index.json/candidates/${candidateId}`);
+        const response = await fetch(`http://localhost:5000/candidates/${candidateId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch candidate data');
         }
