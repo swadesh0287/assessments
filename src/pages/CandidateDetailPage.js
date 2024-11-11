@@ -14,7 +14,7 @@ function CandidateDetailPage() {
     const fetchCandidateData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:5000/candidates/${candidateId}`);
+        const response = await fetch(`https://jsonserver-s77z.onrender.com/candidates/${candidateId}`);
         if (!response.ok) {
           throw new Error('Failed to fetch candidate data');
         }
