@@ -18,14 +18,14 @@ function CreateAssessmentPage() {
   const [errorFields, setErrorFields] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/jobs')
+    axios.get('https://swadesh0287.github.io/assessments/index.json/jobs')
       .then((response) => setJobOptions(response.data))
       .catch((error) => console.error('Error fetching jobs:', error));
   }, []);
 
   useEffect(() => {
     if (selectedJob) {
-      axios.get(`http://localhost:5000/questions?jobId=${selectedJob}`)
+      axios.get(`https://swadesh0287.github.io/assessments/index.json/questions?jobId=${selectedJob}`)
         .then((response) => setQuestions(response.data))
         .catch((error) => console.error('Error fetching questions:', error));
     }
@@ -61,7 +61,7 @@ function CreateAssessmentPage() {
       return;
     }
 
-    axios.get('http://localhost:5000/questions')
+    axios.get('https://swadesh0287.github.io/assessments/index.json/questions')
       .then((response) => {
         const allQuestions = response.data;
   
@@ -89,7 +89,7 @@ function CreateAssessmentPage() {
           correctAnswer,
         };
   
-        axios.post(`http://localhost:5000/questions`, { jobId: selectedJob, ...newQuestion })
+        axios.post(`https://swadesh0287.github.io/assessments/index.json/questions`, { jobId: selectedJob, ...newQuestion })
           .then((response) => {
             setQuestions((prev) => [...prev, response.data]);
             setQuestionText('');
@@ -102,7 +102,7 @@ function CreateAssessmentPage() {
   };
   
   const handleDeleteQuestion = (questionId) => {
-    axios.delete(`http://localhost:5000/questions/${questionId}`)
+    axios.delete(`https://swadesh0287.github.io/assessments/index.json/questions/${questionId}`)
       .then(() => {
         setQuestions((prev) => prev.filter((q) => q.id !== questionId));
       })
@@ -124,7 +124,7 @@ function CreateAssessmentPage() {
       correctAnswer,
     };
 
-    axios.put(`http://localhost:5000/questions/${questions[editingQuestionIndex].id}`, updatedQuestion)
+    axios.put(`https://swadesh0287.github.io/assessments/index.json/questions/${questions[editingQuestionIndex].id}`, updatedQuestion)
       .then(() => {
         const updatedQuestions = [...questions];
         updatedQuestions[editingQuestionIndex] = { ...updatedQuestion, id: questions[editingQuestionIndex].id };

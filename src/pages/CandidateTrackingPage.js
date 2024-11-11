@@ -20,7 +20,7 @@ function CandidateTrackingPage() {
   useEffect(() => {
     const fetchCandidates = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/applicants?jobId=${jobId}`);
+        const response = await axios.get(`https://swadesh0287.github.io/assessments/index.json/applicants?jobId=${jobId}`);
         setCandidates(response.data);
         setLoading(false);
       } catch (err) {
