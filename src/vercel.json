@@ -1,9 +1,0 @@
-{
-    "rewrites": [
-      { "source": "/jobs", "destination": "/api/jobs" },
-      { "source": "/candidates", "destination": "/api/candidates" },
-      { "source": "/questions", "destination": "/api/questions" },
-      { "source": "/applicants", "destination": "/api/applicants" }
-    ]
-  }
-  
