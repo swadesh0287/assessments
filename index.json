@@ -3,7 +3,7 @@
     {
       "title": "Software Engineer",
       "description": "Analyze and interpret complex data to help organizations make decisions.",
-      "applicants": 7,
+      "applicants": 8,
       "id": "1"
     },
     {
@@ -47,12 +47,6 @@
       "title": "Project Manager",
       "description": "Manage cross-functional teams to ensure projects are delivered on time and within scope.",
       "applicants": 6
-    },
-    {
-      "id": "9",
-      "title": "QA Engineer",
-      "description": "Test and evaluate software applications to ensure they meet required quality standards.",
-      "applicants": 14
     }
   ],
   "candidates": [
@@ -464,7 +458,7 @@
     },
     {
       "id": "3ec1",
-      "jobId": "9",
+      "jobId": null,
       "question": "what is qa",
       "answers": [
         "a qa",

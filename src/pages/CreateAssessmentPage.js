@@ -18,14 +18,14 @@ function CreateAssessmentPage() {
   const [errorFields, setErrorFields] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/jobs')
+    axios.get('https://assessments-tau.vercel.app/jobs')
       .then((response) => setJobOptions(response.data))
       .catch((error) => console.error('Error fetching jobs:', error));
   }, []);
 
   useEffect(() => {
     if (selectedJob) {
-      axios.get(`http://localhost:5000/questions?jobId=${selectedJob}`)
+      axios.get(`https://assessments-tau.vercel.app/questions?jobId=${selectedJob}`)
         .then((response) => setQuestions(response.data))
         .catch((error) => console.error('Error fetching questions:', error));
     }
@@ -124,7 +124,7 @@ function CreateAssessmentPage() {
       correctAnswer,
     };
 
-    axios.put(`http://localhost:5000/questions/${questions[editingQuestionIndex].id}`, updatedQuestion)
+    axios.put(`https://assessments-tau.vercel.app//questions/${questions[editingQuestionIndex].id}`, updatedQuestion)
       .then(() => {
         const updatedQuestions = [...questions];
         updatedQuestions[editingQuestionIndex] = { ...updatedQuestion, id: questions[editingQuestionIndex].id };

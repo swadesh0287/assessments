@@ -2,22 +2,22 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const fetchJobs = createAsyncThunk('jobs/fetchJobs', async () => {
-  const response = await axios.get('http://localhost:5000/jobs');
+  const response = await axios.get('https://assessments-tau.vercel.app/jobs');
   return response.data;
 });
 
 export const addJob = createAsyncThunk('jobs/addJob', async (jobData) => {
-  const response = await axios.post('http://localhost:5000/jobs', jobData);
+  const response = await axios.post('https://assessments-tau.vercel.app/jobs', jobData);
   return response.data;
 });
 
 export const updateJob = createAsyncThunk('jobs/updateJob', async ({ id, updatedJob }) => {
-  await axios.put(`http://localhost:5000/jobs/${id}`, updatedJob);
+  await axios.put(`https://assessments-tau.vercel.app/jobs/${id}`, updatedJob);
   return { id, updatedJob };
 });
 
 export const deleteJob = createAsyncThunk('jobs/deleteJob', async (id) => {
-  await axios.delete(`http://localhost:5000/jobs/${id}`);
+  await axios.delete(`https://assessments-tau.vercel.app/jobs/${id}`);
   return id;
 });
 
